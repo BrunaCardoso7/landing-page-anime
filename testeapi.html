@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo de consumo da API Jikan</title>
+</head>
+<body>
+  <h1>Detalhes do Anime</h1>
+  <ul id="anime-details">
+    
+  </ul>
+
+  <script>
+    function api(){
+
+        const id = 69
+        const endpoint = `https://api.jikan.moe/v4/anime/${id}`
+        
+        fetch(endpoint)
+        .then(res=>{return res.json()})
+        .then((data)=>{testeapi(data)})
+    }
+        
+    function testeapi(animes){
+        const ul = document.querySelector('#anime-details')
+        const anime = document.createElement('li')
+        anime.textContent = animes.data.title_english
+
+        ul.appendChild(anime)
+
+        const image = document.createElement('img')
+        image.src = animes.data.images.jpg.image_url
+
+        ul.appendChild(image)
+
+        const sinopsy = document.createElement('li')
+        sinopsy.textContent = animes.data.synopsis
+
+        ul.appendChild(sinopsy)
+
+    }
+    api()
+  </script> 
+</body>
+</html>
