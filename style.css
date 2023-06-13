@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,300;0,400;0,500;1,200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Prompt', sans-serif;
+}
+html, body{
+    background-color: rgb(26, 25, 25);
+}
+span{
+    color: rgb(12, 211, 12);
+}
+#logo_color{
+    color: rgb(187, 187, 187);
+}
+#cont_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40%;
+}
+#pesq{
+    border-radius: 8px;
+    width: 300px;
+    height: 30px;
+    background-color: rgb(216, 216, 216);
+
+}
+#btn_pesq{
+    color: green;
+    background-color: rgba(0, 0, 0, 0.089);
+    border: 2px solid green;
+    padding: 2px 10px;
+}
+#btn_pesq:hover{
+    color: white;
+    background-color: green;
+    border: 2px solid green;
+}
+#consteiner_main{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+    gap: 50px;
+}
+.anime_details{
+    align-items: center;
+}
+.anime_img{
+    width: 140px;
+    height: 200px;
+}
+.anime_title{
+    font-size: .8rem;
+    color: orange;
+    font-weight: 500;
+}
+.input_focus{
+    outline: 1px solid gray;
+}
