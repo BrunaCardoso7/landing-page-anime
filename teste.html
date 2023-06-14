@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste de streaming</title>
+</head>
+<body>
+    <div id="episodios-container">
+
+
+
+    </div>
+    <script>
+        function buscarEpisodios() {
+        const animeId = 1; // ID do anime que você deseja obter os episódios
+        const url = `https://api.jikan.moe/v4/anime/${animeId}/episodes`;
+
+        fetch(url)
+            .then(response => response.json()) // Converter a resposta para JSON
+            .then(data => {
+            exibirEpisodios(data.data);
+            });
+        }
+
+        function exibirEpisodios(episodios) {
+            const episodiosContainer = document.querySelector('#episodios-container');
+            episodiosContainer.innerHTML = ''; // Limpar o conteúdo anterior
+
+            if (episodios && episodios.length > 0) {
+                episodios.forEach(episodio => {
+                const episodioItem = document.createElement('div');
+                episodioItem.textContent = episodio.url;
+                episodiosContainer.appendChild(episodioItem);
+                });
+            } else {
+                const mensagemErro = document.createElement('div');
+                mensagemErro.textContent = 'Nenhum episódio encontrado';
+                episodiosContainer.appendChild(mensagemErro);
+            }
+            }
+[]
+        buscarEpisodios();
+    </script>
+</body>
+</html>
